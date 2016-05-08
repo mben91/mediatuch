@@ -38,8 +38,8 @@ function slider(index) {
         $('.slider .slide-' +index+ ' h1').animate({ marginTop: '0px', opacity: '1'}, 300, function() {
 
             setTimeout(function() {
-                $('.slider .slide-' +index+ ' .sl-img').animate({ top: '0px', right: '0px', opacity: '1', transform: 'rotate(0deg)' }, 300);
-            }, 300);
+                $('.slider .slide-' +index+ ' .sl-img').animate({ top: '0px', right: '0px', opacity: '1', transform: 'rotate(0deg)' }, 600);
+            }, 0);
 
             $('.slider .slide-' +index+ ' ul li').each(function(i, item) {     
 
