@@ -179,6 +179,28 @@ ul.sub-menu > li > a:hover {
     transform: rotate('-20deg');
 }
 
+.slider { position: relative }
+.slider .navigation {
+    position: absolute;
+    bottom: 40px;
+    right: 10%;
+    height: 35px;
+}
+
+.slider .navigation .next,
+.slider .navigation .prev {
+    display: inline-block;
+    height: 35px; 
+    width: 35px;
+    margin-left: 5px;
+    background: red;
+}
+
+.slider .navigation .next.disabled,
+.slider .navigation .prev.disabled {
+    opacity: 0.5;
+}
+
 .vague-white {
     background: url("../images/background-map-bottom.png") repeat-x;
     height: 18px;
