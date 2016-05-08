@@ -1,35 +1,73 @@
 $(document).ready(function() {
    
+    var paused = false;
+    
     setTimeout(function() {
         var first = true;
         var index = 1;
         
         slider(index);
-        index++;
         
         setInterval(function() {
-            slider(index);
-            if($('.slider .slide-item').size() > index)
-            index++;
-            else 
-            index = 1;
+            
+            if(!paused) {
+                
+                if($('.slider .slide-item').size() > index) {
+                    index++;
+                } else {
+                    index = 1;
+                }
+                slider(index);
+            }
+            
         }, 5000);
         
+        $('.slider .navigation').on('click', '.next:not(.disabled)', function() {
+            index++;
+            slider(index);
+        });
+        
+        $('.slider .navigation').on('click', '.prev:not(.disabled)', function() {
+            index--;
+            slider(index);
+        });
+        
     }, 1000);
+    
+    $('.slider .navigation *').hover(
+        function() {
+            paused = true;
+        },
+        function() {
+            paused = false;
+        }
+    );
     
     
 });
 
 function slider(index) {
     
+    if(index == 1) {
+        $('.slider .navigation .next').removeClass('disabled');
+        $('.slider .navigation .prev').addClass('disabled');
+    } else if(index == $('.slider .slide-item').size()) {
+        $('.slider .navigation .next').addClass('disabled');
+        $('.slider .navigation .prev').removeClass('disabled');
+    } else {
+        $('.slider .navigation .next').removeClass('disabled');
+        $('.slider .navigation .prev').removeClass('disabled');
+    }
+    
+    
     $('.slider .slide-item .container').animate({ opacity : 0 }, 200, function() {
         $(this).hide();
+        
+        $('.slider h1').stop().removeAttr('style');
+        $('.slider h3').stop().removeAttr('style');
+        $('.slider .sl-img').stop().removeAttr('style');
+        $('.slider ul li').stop().removeAttr('style');
     });
-    
-    $('.slider .slide-' +index+ ' h1').removeAttr('style');
-    $('.slider .slide-' +index+ ' h3').removeAttr('style');
-    $('.slider .slide-' +index+ ' .sl-img').removeAttr('style');
-    $('.slider .slide-' +index+ ' ul li').removeAttr('style');
     
     setTimeout(function() {
     $('.slider .slide-' +index+ ' .container').show();
