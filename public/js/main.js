@@ -73,7 +73,7 @@ function slider(index) {
     $('.slider .slide-' +index+ ' .container').show();
     $('.slider .slide-' +index+ ' .container').animate({ opacity : 1 }, 200, function() {
         $('.slider .slide-' +index+ ' h3').animate({ marginTop: '0px', opacity: '1'}, 400);
-        $('.slider .slide-' +index+ ' h1').animate({ marginTop: '0px', opacity: '1'}, 300, function() {
+        $('.slider .slide-' +index+ ' h1').animate({ marginTop: '20px', opacity: '1'}, 300, function() {
 
             setTimeout(function() {
                 $('.slider .slide-' +index+ ' .sl-img').animate({ top: '0px', right: '0px', opacity: '1', transform: 'rotate(0deg)' }, 600);

@@ -125,7 +125,6 @@ ul.sub-menu > li > a:hover {
     margin-top: -100px;
     opacity: 0;
     font-size: 55px;
-    margin-top: 20px;
 }
 .slider h3 {
     margin-top: -200px;
@@ -136,7 +135,7 @@ ul.sub-menu > li > a:hover {
 
 .slider ul {
     margin-top: 40px;
-    margin-left: 40px;
+    
 }
 .slider ul li {
     text-align: left;
@@ -150,7 +149,7 @@ ul.sub-menu > li > a:hover {
     height: 30px;*/
     margin-left: -400px;
     width: 0px;
-    height: 24px;
+    height: 0px;
     opacity: 0;
     padding: 0px;
     list-style-image: url("../images/checkbox-slide.png") left center;
